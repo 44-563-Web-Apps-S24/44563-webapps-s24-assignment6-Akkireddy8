@@ -8,11 +8,11 @@
 
         <main>
             <form>
-                <label for="hiddenAnimal">The hidden animal type</label>
-                <input type="password" id="hiddenAnimal" value="Chicken">
+                <label for="hidden_animal">The hidden animal type</label>
+                <input type="password" id="hidden_animal" value="Chicken">
                 <br>
-                <label for="guessAnimal">Guess the animal</label>
-                <input type="text" id="guessAnimal">
+                <label for="guess_animal">Guess the animal</label>
+                <input type="text" id="guess_animal">
                 <br>
                 <button type="button" onclick="checkAnimal()">Check the guess</button>
             </form>
@@ -24,10 +24,10 @@
             let correct = 0;
         
             function checkAnimal() {
-                const hiddenAnimal = document.getElementById('hiddenAnimal').value;
-                const guessAnimal = document.getElementById('guessAnimal').value;
+                const hidden_Animal = document.getElementById('hidden_animal').value;
+                const guess_Animal = document.getElementById('guess_animal').value;
         
-                if (hiddenAnimal.toLowerCase() === guessAnimal.toLowerCase()) {
+                if (hidden_Animal.toLowerCase() === guess_Animal.toLowerCase()) {
                     correct++;
                     alert('Ruff ruff');
                 } else {
