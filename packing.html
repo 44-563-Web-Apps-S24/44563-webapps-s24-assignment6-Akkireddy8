@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Details of packing</title>
+</head>
+
+<body>
+    <h1>Akshitha Katyaini Reddy Akkireddy packs for a trip</h1>
+
+    <h2>Getting input</h2>
+    <form>
+        <label for="Pack light">Pack light</label>
+        <input type="checkbox" id="Pack light" value=30>
+        <br>
+
+        <label for="Carry on">Carry on</label>
+        <input type="checkbox" id="Carry on" value="True">
+        <br>
+
+        <label for="Tablet">Tablet</label>
+        <input type="checkbox" id="Tablet" value="False">
+        <br>
+        <br>
+        <input type="button" value="Select for Packing" onclick="selectpack()">
+    </form>
+
+    <p id="result">This text will be replaced </p>
+
+    <form>
+
+        <label for="month_name">Enter travel month</label>
+        <input type="text" id="month" name="month_name" value="May">
+        <br>
+
+        <label for="trip_price">Enter price</label>
+        <input type="text" id="price" name="trip_price" value=" ">
+        <br>
+        <br>
+        <input type="button" onclick="updatePack()" value="Update the pack">
+    </form>
+    
+    <p id="results">This text will be replaced</p>
+
+    <script>
+
+        var my_pack = {};
+        function selectpack() {
+            my_pack = {};
+            my_pack.packlight = document.getElementById("Pack light").checked;
+            my_pack.carryon = document.getElementById("Carry on").checked;
+            my_pack.tablet = document.getElementById("Tablet").checked;
+            document.getElementById("result").textContent = JSON.stringify(my_pack);
+        }
+
+        function updatePack() {
+            my_pack = {};
+            var month_name = document.getElementById("month").value;
+            var trip_price = document.getElementById("price").value;
+            my_pack.month_name = document.getElementById("month").value;
+            my_pack.trip_price = document.getElementById("price").value;
+
+            document.getElementById("results").textContent = JSON.stringify(my_pack);
+
+        }
+    </script>
+
+</body>
+
+</html>
